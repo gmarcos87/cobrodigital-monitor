@@ -1,0 +1,27 @@
+{
+  "name": "cobrodigital-monitor",
+  "version": "0.0.1",
+  "description": "Monitor de pagos en CobroDigital",
+  "main": "app.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/gmarcos87/cobrodigital-monitor.git"
+  },
+  "keywords": [
+    "gateway",
+    "cobrodigital",
+    "node"
+  ],
+  "author": "Marcos Gutierrez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gmarcos87/cobrodigital-monitor/issues"
+  },
+  "homepage": "https://github.com/gmarcos87/cobrodigital-monitor#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "node-fetch": "^1.6.0"
+  }
+}
