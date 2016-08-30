@@ -1,6 +1,6 @@
 {
   "name": "cobrodigital-monitor",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Monitor de pagos en CobroDigital",
   "main": "app.js",
   "scripts": {},
