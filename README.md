@@ -4,10 +4,10 @@ Simple middleware en Javascript para Express que solicita y convierte a json los
 
 Con este paquete podes:
   - Declarar el hash por ENV
-  - Asignar una función tipo callback cuando los datos son convertidos
+  - Asignar una función tipo callback cuando los datos son convertidos a json
   - Logear la actividad de la cuenta
 
-En mi caso utlizo este middleware para hacer un pull cunado el Webhook es solicitado. De esta forma los datos agregados al sistema son siempre los que solicito y no los que envia el Webhook. Es decir que la sincronización es siempre en Pull y no en Push.
+En mi caso utlizo este middleware para hacer un pull cuando el Webhook es solicitado. De esta forma los datos agregados al sistema son siempre los que solicito y no los que envia el Webhook. Es decir, la sincronización es en Pull y no en Push.
 
 ### Intalación
 Requiere [Node.js](https://nodejs.org/) y [Express](http://expressjs.com/es/).
