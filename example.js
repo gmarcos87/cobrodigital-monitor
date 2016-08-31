@@ -5,8 +5,9 @@ var app = express();
 
 //CONFIGURACION DE CUENTA DIGITAL Y DEL CALLBACK
 monitor.init({
-  hash: process.env.CDIGITAL || "qwerty1234qwerty1234qwerty",
+  hash: process.env.CDIGITAL, || "qwerty1234qwerty1234qwerty",
   sandbox: false,
+  time:true,
   urlDate: {
     fecha: '20160817',
     hour1:'00',
