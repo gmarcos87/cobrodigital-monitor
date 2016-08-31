@@ -95,7 +95,6 @@ var extend = require('util')._extend;
       }
   },
   pullPay: function(req,res,next){
-      console.log(urlComposer(monitor.options))
       fetch(urlComposer(monitor.options)).then(function(result) {
         return result.text()
        })
