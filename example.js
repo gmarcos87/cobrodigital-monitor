@@ -5,7 +5,15 @@ var app = express();
 
 //CONFIGURACION DE CUENTA DIGITAL Y DEL CALLBACK
 monitor.init({
-  hash: process.env.CDIGITAL || "qwerty1234qwerty1234qwerty"
+  hash: process.env.CDIGITAL || "qwerty1234qwerty1234qwerty",
+  sandbox: false,
+  urlDate: {
+    fecha: '20160817',
+    hour1:'00',
+    min1:'00',
+    hour2:'23',
+    min2:'59'
+  }
 });
 
 //URL QUE SE USA PARA EL MINTOR

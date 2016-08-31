@@ -37,15 +37,45 @@ var extend = require('util')._extend;
    return arrJsonObject;
  }
 
+ function formatDate(urlDate){
+   if(urlDate.fecha == ''){
+     var m = new Date();
+     urlDate.fecha = m.getUTCFullYear() +''+ (m.getUTCMonth()+1) +''+ m.getUTCDate();
+   }
+   return urlDate;
+ }
+
+ function urlComposer(options){
+   if (options.sandbox == true){
+     var url = options.urlSandbox
+   } else {
+      var url = options.urlProduction;
+   }
+   if(options.time){
+     options.urlDate = formatDate(options.urlDate);
+     return url + '?control=' + options.hash + '&fecha=' + options.urlDate.fecha +
+            '&hour1=' + options.urlDate.hour1 + '&min1=' + options.urlDate.min1 +
+            '&hour2=' + options.urlDate.hour2 + '&min2=' + options.urlDate.min2;
+   }
+   else {
+     return url + '?control=' + options.hash;
+   }
+ }
 
  var monitor = {
    /* Customizable options */
   options: {
-    path: "monitor",
     sandbox: true,
+    time: true,
     urlProduction: "https://www.cuentadigital.com/exportacion.php",
     urlSandbox:"https://www.cuentadigital.com/exportacionsandbox.php",
-    userId:"",
+    urlDate: {
+      fecha:'',
+      hour1:'00',
+      min1:'00',
+      hour2:'23',
+      min2:'59'
+    },
     hash:"",
     headers: [
       'fechaDeCobro',
@@ -65,12 +95,8 @@ var extend = require('util')._extend;
       }
   },
   pullPay: function(req,res,next){
-      if (monitor.options.sandbox == true){
-        var url = monitor.options.urlSandbox
-      } else {
-         var url = monitor.options.urlProduction;
-      }
-      fetch(url+'?control='+monitor.options.hash).then(function(result) {
+      console.log(urlComposer(monitor.options))
+      fetch(urlComposer(monitor.options)).then(function(result) {
         return result.text()
        })
       .then(function(body) {
