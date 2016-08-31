@@ -44,7 +44,7 @@ cobro.init({
       'primerCobroDelArchivo'],
     time: true, //Si la consulta incuye le rango de fecha y horario
     urlDate: {
-      fecha:'20160801' //yyyymmdd - Por default toma la fecha de la solicitud
+      fecha:'20160801', //yyyymmdd - Por default toma la fecha de la solicitud
       hour1:'00',
       min1:'00',
       hour2:'23',
